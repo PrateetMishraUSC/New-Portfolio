@@ -4,6 +4,7 @@ import stockImg from "../assets/StocksTrading.png";
 import transferImg from "../assets/TransferLearning.png";
 import readEstateImg from "../assets/Real_State.png";
 import roboImg from "../assets/robofriends.png";
+import docuchatImg from "../assets/DocuChat.png";
 
 
 export const personalInfo = {
@@ -32,6 +33,16 @@ export const navLinks = [
 ];
 
 export const projects = [
+  {
+    title: "DocuChat",
+    description:
+      "A text-first multimodal RAG system that lets you upload document's and chat with them in real time, extracting tables and figures as searchable knowledge, with full source citations and retrieval transparency.",
+    tech: ["React", "FastAPI", "LangChain", "Vector DB", "LLM", "Transformers"],
+    liveUrl: "https://huggingface.co/spaces/prateetmishra/DocuChat", 
+    sourceUrl: "https://github.com/PrateetMishraUSC/Text-First-Multimodal-Rag", 
+    gradient: "linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #a855f7 100%)",
+    image: docuchatImg,
+  },
   {
     title: "WeBudget",
     description:
