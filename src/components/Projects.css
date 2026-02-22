@@ -1,0 +1,217 @@
+.featured-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+/* ===== Featured project row ===== */
+.fp {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: center;
+  gap: 0;
+  position: relative;
+}
+
+/* Even rows: image left, content right — slide from left */
+.fp--left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+/* Odd rows: image right, content left — slide from right */
+.fp--right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.fp.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Flip column order for right-aligned projects */
+.fp--right {
+  direction: rtl;
+}
+.fp--right > * {
+  direction: ltr;
+}
+
+/* ===== Image ===== */
+.fp__image-wrap {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  cursor: pointer;
+  display: block;
+}
+
+.fp__image {
+  aspect-ratio: 16 / 10;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.fp__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  transition: transform 0.4s ease;
+}
+
+.fp:hover .fp__image img {
+  transform: scale(1.03);
+}
+
+/* Subtle overlay */
+.fp__image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 1, 24, 0.3);
+  border-radius: 0.75rem;
+  transition: opacity var(--transition-base);
+}
+
+.fp:hover .fp__image::after {
+  opacity: 0.1;
+}
+
+/* ===== Content (overlaps image) ===== */
+.fp__content {
+  position: relative;
+  z-index: 2;
+  margin-left: -3rem;
+  /* Left tile (image left): content aligns right */
+  text-align: right;
+}
+
+.fp--right .fp__content {
+  margin-left: 0;
+  margin-right: -3rem;
+  /* Right tile (image right): content aligns left */
+  text-align: left;
+}
+
+.fp__label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--accent-primary);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.fp__title {
+  font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.fp__description {
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.75rem;
+}
+
+.fp__description p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.fp__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  /* Left tile default: align right */
+  justify-content: flex-end;
+}
+
+.fp--right .fp__tech {
+  justify-content: flex-start;
+}
+
+.fp__tag {
+  font-size: 0.775rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-family: 'Space Grotesk', monospace;
+}
+
+.fp__tag:not(:last-child)::after {
+  content: ' \00b7';
+  margin-left: 0.5rem;
+  color: var(--text-muted);
+}
+
+.fp__links {
+  display: flex;
+  gap: 1rem;
+  /* Left tile default: align right */
+  justify-content: flex-end;
+}
+
+.fp--right .fp__links {
+  justify-content: flex-start;
+}
+
+.fp__link {
+  color: var(--text-secondary);
+  transition: color var(--transition-base), transform var(--transition-base);
+  display: inline-flex;
+}
+
+.fp__link:hover {
+  color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+/* ===== Mobile: stacked layout ===== */
+@media (max-width: 768px) {
+  .featured-projects {
+    gap: 4rem;
+  }
+
+  .fp,
+  .fp--right {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    transform: translateY(24px);
+  }
+
+  .fp.visible {
+    transform: translateY(0);
+  }
+
+  .fp--right > * {
+    direction: ltr;
+  }
+
+  .fp__content {
+    margin-left: 0;
+    margin-top: -2rem;
+    text-align: left;
+  }
+
+  .fp--right .fp__content {
+    margin-right: 0;
+    text-align: left;
+  }
+
+  .fp__tech,
+  .fp__links,
+  .fp--right .fp__tech,
+  .fp--right .fp__links {
+    justify-content: flex-start;
+  }
+}

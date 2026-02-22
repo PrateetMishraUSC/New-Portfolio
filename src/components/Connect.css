@@ -1,0 +1,80 @@
+.connect {
+  text-align: center;
+  padding-bottom: 6rem;
+}
+
+.connect__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 890px;
+  margin: 0 auto;
+}
+
+.connect__title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1.25rem;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.connect__description {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.connect__buttons {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.connect__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 0.625rem;
+  transition: box-shadow var(--transition-base), transform var(--transition-base), border-color var(--transition-base), background var(--transition-base);
+}
+
+.connect__btn--primary {
+  background: var(--gradient-accent);
+  color: #fff;
+}
+
+.connect__btn--primary:hover {
+  box-shadow: 0 0 24px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+.connect__btn--secondary {
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  background: transparent;
+}
+
+.connect__btn--secondary:hover {
+  border-color: var(--glass-hover-border);
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .connect__buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .connect__btn {
+    justify-content: center;
+    width: 100%;
+  }
+}
