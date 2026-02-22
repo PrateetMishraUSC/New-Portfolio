@@ -1,3 +1,11 @@
+import webudgetImg from "../assets/WeBudget.png"; 
+import smartmedAI from "../assets/SmartMedAI.png";
+import stockImg from "../assets/StocksTrading.png";
+import transferImg from "../assets/TransferLearning.png";
+import readEstateImg from "../assets/Real_State.png";
+import roboImg from "../assets/robofriends.png";
+
+
 export const personalInfo = {
   name: "Prateet",
   greeting: "Hi, I'm",
@@ -32,7 +40,7 @@ export const projects = [
     liveUrl: "https://we-budget-rho.vercel.app/", 
     sourceUrl: "https://github.com/PrateetMishraUSC/WeBudget", 
     gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-    image: "src/assets/WeBudget.png",
+    image: webudgetImg,
   },
   {
     title: "SmartMedAI",
@@ -41,7 +49,7 @@ export const projects = [
     tech: ["Python", "PyTorch", "RLAIF", "LoRA", "Hugging Face PEFT", "Qwen", "DeepSeek"],
     sourceUrl: "https://prateetmishrausc.github.io/SmartMedAI/",
     gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
-    image: "src/assets/SmartMedAI.png",
+    image: smartmedAI,
   },
   {
     title: "Stock Trading & Analytics Platform",
@@ -50,7 +58,7 @@ export const projects = [
     tech: ["Angular", "Express.js" ,"Node.js", "MongoDB", "Docker", "Redis", "GCP"],
     sourceUrl: "https://github.com/PrateetMishraUSC/Stock-Trading-and-Analytics-Platform",
     gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
-    image: "src/assets/StocksTrading.png",
+    image: stockImg,
   },
   {
     title: "Transfer Learning for Image Classification",
@@ -59,7 +67,7 @@ export const projects = [
     tech: ["Python", "Tensorflow/Keras", "OpenCV", "CNN's"],
     sourceUrl: "https://prateetmishrausc.github.io/Transfer-Learning-for-Image-Classification/",
     gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
-    image: "src/assets/TransferLearning.png",
+    image: transferImg,
   },
   {
     title: "Real EState Price Prediction",
@@ -68,7 +76,7 @@ export const projects = [
     tech: ["Python", "Pandas", "Scikit-learn", "Flask API", "Feature Engineering"],
     sourceUrl: "https://github.com/PrateetMishraUSC/Real-State-Price-Prediction",
     gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
-    image: "src/assets/Real_State.png",
+    image: readEstateImg,
   },
   {
     title: "RoboFriends",
@@ -77,7 +85,7 @@ export const projects = [
     tech: ["JavaScript" ,"React" ,"Node.js", "REST API", "Material UI"],
     liveUrl: "https://prateetmishra.github.io/robofriends/",
     gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
-    image: "src/assets/robofriends.png",
+    image: roboImg,
   },
   
 ];
