@@ -1,0 +1,64 @@
+/* Panels fixed at top, just below navbar, line connects up to navbar */
+.social-panel {
+  position: fixed;
+  top: var(--nav-height);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-panel--left {
+  left: clamp(1.5rem, 3vw, 3rem);
+}
+
+.social-panel--right {
+  right: clamp(1.5rem, 3vw, 3rem);
+}
+
+/* Line connects from navbar downward */
+.social-panel__line {
+  width: 1px;
+  height: 3rem;
+  background: var(--text-muted);
+  opacity: 0.3;
+  margin-bottom: 1rem;
+}
+
+.social-panel__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.social-panel__link {
+  color: var(--text-muted);
+  transition: color var(--transition-base), transform var(--transition-base);
+  display: inline-flex;
+  padding: 2px;
+}
+
+.social-panel__link:hover {
+  color: var(--accent-primary);
+  transform: translateY(-3px);
+}
+
+.social-panel__email {
+  writing-mode: vertical-rl;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  transition: color var(--transition-base), transform var(--transition-base);
+}
+
+.social-panel__email:hover {
+  color: var(--accent-primary);
+  transform: translateY(3px);
+}
+
+@media (max-width: 1024px) {
+  .social-panel {
+    display: none;
+  }
+}
