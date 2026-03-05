@@ -47,26 +47,26 @@ button {
 /* ===== CSS Custom Properties ===== */
 :root {
   /* Backgrounds */
-  --bg-primary: #0a0118;
-  --bg-secondary: #110a2e;
-  --bg-surface: rgba(255, 255, 255, 0.04);
+  --bg-primary: #faf8f5;
+  --bg-secondary: #f3efe9;
+  --bg-surface: rgba(255, 255, 255, 0.6);
 
   /* Glass */
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-hover-border: rgba(139, 92, 246, 0.35);
-  --glass-blur: 12px;
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-border: rgba(160, 130, 200, 0.18);
+  --glass-hover-border: rgba(124, 92, 191, 0.4);
+  --glass-blur: 16px;
 
   /* Text */
-  --text-primary: #e2e8f0;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
+  --text-primary: #1a1523;
+  --text-secondary: #6b6478;
+  --text-muted: #9e96a8;
 
   /* Accents */
-  --accent-primary: #8b5cf6;
-  --accent-secondary: #6366f1;
-  --accent-glow: rgba(139, 92, 246, 0.4);
-  --gradient-accent: linear-gradient(135deg, #8b5cf6, #6366f1, #3b82f6);
+  --accent-primary: #7c5cbf;
+  --accent-secondary: #9b7dca;
+  --accent-glow: rgba(124, 92, 191, 0.25);
+  --gradient-accent: linear-gradient(135deg, #9b7dca, #7c5cbf, #c084a0);
 
   /* Spacing */
   --nav-height: 72px;
@@ -112,8 +112,8 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); font-weight: 600; }
   letter-spacing: 0.1em;
   margin-bottom: 1rem;
   padding: 0.375rem 1rem;
-  background: rgba(139, 92, 246, 0.1);
-  border: 1px solid rgba(139, 92, 246, 0.2);
+  background: rgba(124, 92, 191, 0.08);
+  border: 1px solid rgba(124, 92, 191, 0.18);
   border-radius: 9999px;
 }
 
@@ -146,7 +146,7 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); font-weight: 600; }
 
 @supports not (backdrop-filter: blur(12px)) {
   .glass {
-    background: rgba(17, 10, 46, 0.92);
+    background: rgba(255, 255, 255, 0.88);
   }
 }
 
@@ -162,9 +162,9 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); font-weight: 600; }
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(600px circle at 15% 25%, rgba(124, 58, 237, 0.15), transparent 70%),
-    radial-gradient(500px circle at 85% 55%, rgba(37, 99, 235, 0.12), transparent 70%),
-    radial-gradient(450px circle at 50% 85%, rgba(109, 40, 217, 0.1), transparent 70%);
+    radial-gradient(600px circle at 15% 25%, rgba(180, 150, 220, 0.15), transparent 70%),
+    radial-gradient(500px circle at 85% 55%, rgba(210, 170, 200, 0.12), transparent 70%),
+    radial-gradient(450px circle at 50% 85%, rgba(160, 130, 200, 0.1), transparent 70%);
   background-color: var(--bg-primary);
 }
 

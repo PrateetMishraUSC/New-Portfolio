@@ -13,7 +13,7 @@ export default function FloatingIcons() {
         left: `${5 + ((i * 37 + 13) % 85)}%`,
         top: `${5 + ((i * 53 + 29) % 80)}%`,
         animationDuration: `${18 + (i % 5) * 4}s`,
-        animationDelay: `${-(i * 2.7)}s`,
+        animationDelay: `${(i * 0.7)}s`,
         // Vary size slightly
         width: `${28 + (i % 4) * 6}px`,
         height: `${28 + (i % 4) * 6}px`,

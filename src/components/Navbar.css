@@ -7,16 +7,16 @@
   height: var(--nav-height);
   display: flex;
   align-items: center;
-  background: rgba(10, 1, 24, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(250, 248, 245, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(160, 130, 200, 0.12);
   transition: background var(--transition-base), box-shadow var(--transition-base);
 }
 
 .navbar--scrolled {
-  background: rgba(10, 1, 24, 0.85);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  background: rgba(250, 248, 245, 0.9);
+  box-shadow: 0 4px 30px rgba(160, 130, 200, 0.1);
 }
 
 .navbar__inner {
@@ -118,7 +118,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 2.5rem;
-    background: rgba(10, 1, 24, 0.95);
+    background: rgba(250, 248, 245, 0.97);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     opacity: 0;

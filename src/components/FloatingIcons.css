@@ -8,10 +8,10 @@
 
 .floating-icons__item {
   position: absolute;
-  opacity: 0.2;
+  opacity: 0.12;
   animation: floatDrift linear infinite;
   will-change: transform;
-  filter: saturate(0.6);
+  filter: saturate(0.4);
 }
 
 @keyframes floatDrift {
