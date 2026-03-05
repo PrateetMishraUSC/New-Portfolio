@@ -132,8 +132,8 @@ export default function Projects() {
   }
 
   return (
-    <section id="projects" className="projects-section section">
-      <div className="container" ref={sectionRef}>
+    <section id="projects" className="projects-section section" ref={sectionRef}>
+      <div className="container">
         <div className="section-header animate-on-scroll">
           <span className="section-label">Projects</span>
           <h2 className="section-title">Things I&apos;ve Built</h2>
@@ -145,7 +145,7 @@ export default function Projects() {
       </div>
 
       <div
-        className="projects-carousel"
+        className="projects-carousel animate-on-scroll"
         onMouseDown={handleMouseDown}
         onTouchStart={handleTouchStart}
       >
@@ -220,7 +220,7 @@ export default function Projects() {
         </div>
       </div>
 
-      <div className="projects-carousel__dots">
+      <div className="projects-carousel__dots animate-on-scroll">
         {projects.map((_, i) => (
           <button
             key={i}
