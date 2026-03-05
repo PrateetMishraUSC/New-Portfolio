@@ -17,10 +17,10 @@ export default function App() {
       <SocialPanel />
       <main>
         <Hero />
-        <Education />
-        <Experience />
         <Projects />
+        <Experience />
         <Skills />
+        <Education />
         <Connect />
       </main>
       <Footer />

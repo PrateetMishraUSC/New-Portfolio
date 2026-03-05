@@ -63,7 +63,7 @@
 
 .connect__btn--secondary:hover {
   border-color: var(--glass-hover-border);
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(124, 92, 191, 0.04);
   transform: translateY(-2px);
 }
 

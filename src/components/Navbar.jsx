@@ -31,7 +31,7 @@ export default function Navbar() {
           className="navbar__logo"
           onClick={(e) => handleNavClick(e, '#hero')}
         >
-          {personalInfo.name}'s Portfolio
+          {personalInfo.name}
         </a>
 
         <ul className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}>

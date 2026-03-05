@@ -14,8 +14,8 @@
   background: linear-gradient(
     to bottom,
     transparent,
-    rgba(139, 92, 246, 0.3) 10%,
-    rgba(139, 92, 246, 0.3) 90%,
+    rgba(124, 92, 191, 0.2) 10%,
+    rgba(124, 92, 191, 0.2) 90%,
     transparent
   );
   transform: translateX(-50%);
@@ -62,7 +62,7 @@
   height: 44px;
   border-radius: 50%;
   background: var(--bg-primary);
-  border: 2px solid rgba(139, 92, 246, 0.4);
+  border: 2px solid rgba(124, 92, 191, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;

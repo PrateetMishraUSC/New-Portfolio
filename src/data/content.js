@@ -9,26 +9,25 @@ import docuchatImg from "../assets/DocuChat.png";
 
 export const personalInfo = {
   name: "Prateet",
-  greeting: "Hi, I'm",
+  greeting: "Hi, I'm Prateet Mishra",
   uni: "MS CS @ University of Southern California | New Grad (Dec '25)",
   tagline: ["Software Engineer", "Applied AI Engineer"],
-  bio: "I enjoy building end to end products that combine clean, responsive user experiences with scalable backend systems and practical applied AI. I prioritize reliability, performance, and thoughtful engineering so the work is accurate, trustworthy, and holds up in real world use.",
+  bio: "Product focused full stack engineer with experience in real time systems and applied AI.",
   email: "prateetm@usc.edu", 
   resumeUrl: "https://prateetmishrausc.github.io/Resume-SDE/",
   socials: [
-    { name: "GitHub", url: "https://github.com/PrateetMishraUSC" },   
     { name: "LinkedIn", url: "https://www.linkedin.com/in/prateet-mishra/" },   
-    { name: "Twitter", url: "https://x.com/prateet_mishra" },    
+    { name: "GitHub", url: "https://github.com/PrateetMishraUSC" },   
     { name: "Email", url: "mailto:prateetm@usc.edu" }, 
   ],
 };
 
 export const navLinks = [
-  { label: "About", href: "#hero" },
-  { label: "Education", href: "#education" },
-  { label: "Experience", href: "#experience" },
+  { label: "About Me", href: "#hero" },
   { label: "Projects", href: "#projects" },
+  { label: "Experience", href: "#experience" },
   { label: "Skills", href: "#skills" },
+  { label: "Education", href: "#education" },
   { label: "Contact", href: "#connect" },
 ];
 
@@ -89,16 +88,6 @@ export const projects = [
     gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
     image: readEstateImg,
   },
-  {
-    title: "RoboFriends",
-    description:
-      "Robo Friends is a React-based web app that renders a card grid of user profiles and lets you filter them in real time with a search bar, updating the UI dynamically as you type.",
-    tech: ["JavaScript" ,"React" ,"Node.js", "REST API", "Material UI"],
-    liveUrl: "https://prateetmishra.github.io/robofriends/",
-    gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
-    image: roboImg,
-  },
-  
 ];
 
 // TODO: Replace with your education details
