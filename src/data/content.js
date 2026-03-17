@@ -57,25 +57,18 @@ export const projects = [
     description:
       "Turned a 1.5B Qwen model into a medical Q&A assistant using LoRA + AI feedback (DPO)—no human labels. Trained on 30k prompts; accuracy rose to 0.805 on 200 clinical questions (+4–8% across metrics)",
     tech: ["Python", "PyTorch", "RLAIF", "LoRA", "Hugging Face PEFT", "Qwen", "DeepSeek"],
-    sourceUrl: "https://prateetmishrausc.github.io/SmartMedAI/",
+    liveUrl: "https://prateetmishrausc.github.io/SmartMedAI/", 
+    sourceUrl: "https://github.com/PrateetMishraUSC/SmartMedAI",
     gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
     image: smartmedAI,
-  },
-  {
-    title: "Stock Trading & Analytics Platform",
-    description:
-      "Built a full-stack real-time trading platform with Angular, Node.js, and Redis Streams for sub-second stock updates across 100+ tickers. Enabled live trading with WebSockets, OAuth-secured sessions, and automated data pipelines on GCP Kubernetes (99.99% uptime).",
-    tech: ["Angular", "Express.js" ,"Node.js", "MongoDB", "Docker", "Redis", "GCP"],
-    sourceUrl: "https://github.com/PrateetMishraUSC/Stock-Trading-and-Analytics-Platform",
-    gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
-    image: stockImg,
   },
   {
     title: "Transfer Learning for Image Classification",
     description:
       "Built a transfer-learning pipeline in TensorFlow/Keras (ResNet50/101, EfficientNet-B0, VGG16) with OpenCV preprocessing, on-the-fly augmentation, and hyperparameter sweeps for robust model selection.",
     tech: ["Python", "Tensorflow/Keras", "OpenCV", "CNN's"],
-    sourceUrl: "https://prateetmishrausc.github.io/Transfer-Learning-for-Image-Classification/",
+    liveUrl: "https://prateetmishrausc.github.io/Transfer-Learning-for-Image-Classification/", 
+    sourceUrl: "https://github.com/PrateetMishraUSC/Transfer-Learning-for-Image-Classification",
     gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
     image: transferImg,
   },
@@ -84,9 +77,20 @@ export const projects = [
     description:
       "Built an end-to-end pricing pipeline in Python (pandas, scikit-learn) using feature engineering (BHK, sqft, locality), outlier handling, and k-fold validation, achieving R² = 0.87 on 10k+ Bengaluru listings. Deployed a Flask inference service with an interactive UI for real-time estimates, cutting manual evaluation time by ~60%.",
     tech: ["Python", "Pandas", "Scikit-learn", "Flask API", "Feature Engineering"],
+    liveUrl: "https://real-estate-price-prediction-8mp8acuyj3yjpwawvecktq.streamlit.app/", 
     sourceUrl: "https://github.com/PrateetMishraUSC/Real-State-Price-Prediction",
     gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
     image: readEstateImg,
+  },
+    {
+    title: "Stock Trading & Analytics Platform",
+    description:
+      "Built a full-stack real-time trading platform with Angular, Node.js, and Redis Streams for sub-second stock updates across 100+ tickers. Enabled live trading with WebSockets, OAuth-secured sessions, and automated data pipelines on GCP Kubernetes (99.99% uptime).",
+    tech: ["Angular", "Express.js" ,"Node.js", "MongoDB", "Docker", "Redis", "GCP"],
+    liveUrl: "https://stock-trading-and-analytics-platfor.vercel.app/search/home",
+    sourceUrl: "https://github.com/PrateetMishraUSC/Stock-Trading-and-Analytics-Platform",
+    gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+    image: stockImg,
   },
 ];
 

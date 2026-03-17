@@ -155,7 +155,7 @@ export default function Projects() {
             return (
               <article key={index} className="project-card" style={style} data-slot={offset}>
                 <a
-                  href={project.liveUrl || project.sourceUrl || '#'}
+                  href={project.sourceUrl || project.liveUrl || '#'}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="project-card__image-link"
