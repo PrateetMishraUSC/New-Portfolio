@@ -1,5 +1,5 @@
 import { personalInfo } from '../data/content';
-import meImage from '../assets/me.png';
+import meImage from '../assets/me2.jpeg';
 import { useTypingEffect } from '../hooks/useTypingEffect';
 import './Hero.css';
 
