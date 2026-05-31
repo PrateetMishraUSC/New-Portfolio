@@ -160,7 +160,7 @@ export const experience = [
   {
     role: "Full Stack Developer Intern",
     company: "Ypsilon IT Solutions",
-    date: "Jul 2022 — Dec 2022",
+    date: "Feb 2023 — Jun 2023",
     location: "Indore, India",
     description: "Delivered a Scrap Auction web app in a 4-member team, leading cross-module integration (listing/bidding/checkout), optimizing uploads with batched DB inserts + pre-signed S3 URLs, and building 12 REST APIs + WebSockets for real-time bidding and alerts (200+ notifications/auction).",
     icon: "briefcase",
