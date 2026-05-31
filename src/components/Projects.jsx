@@ -217,6 +217,7 @@ export default function Projects() {
               </article>
             );
           })}
+          <p className='section-subtitle'><i><b>Drag left or right to change the project!</b></i></p>
         </div>
       </div>
 
