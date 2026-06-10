@@ -5,6 +5,7 @@ import transferImg from "../assets/TransferLearning.png";
 import readEstateImg from "../assets/Real_State.png";
 import roboImg from "../assets/robofriends.png";
 import docuchatImg from "../assets/DocuChat.png";
+import syntropyImg from "../assets/Syntropy.png"
 
 
 export const personalInfo = {
@@ -32,6 +33,16 @@ export const navLinks = [
 ];
 
 export const projects = [
+    {
+    title: "Syntropy",
+    description:
+      "Describe any system in plain English. Syntropy's AI maps it to a live architecture canvas your whole team can explore, edit, and build on together in real time.",
+    tech: ["React", "NextJS", "TypeScript", "Prisma", "LLM", "Transformers"],
+    liveUrl: "https://syntropy-59hj.vercel.app/sign-in?redirect_url=https%3A%2F%2Fsyntropy-59hj.vercel.app%2F", 
+    sourceUrl: "https://github.com/PrateetMishraUSC/Syntropy", 
+    gradient: "linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #a855f7 100%)",
+    image: syntropyImg,
+  },
   {
     title: "DocuChat",
     description:
