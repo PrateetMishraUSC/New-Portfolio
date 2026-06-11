@@ -3,58 +3,79 @@ import smartmedAI from "../assets/SmartMedAI.png";
 import stockImg from "../assets/StocksTrading.png";
 import transferImg from "../assets/TransferLearning.png";
 import readEstateImg from "../assets/Real_State.png";
-import roboImg from "../assets/robofriends.png";
 import docuchatImg from "../assets/DocuChat.png";
 import syntropyImg from "../assets/Syntropy.png"
 
 
 export const personalInfo = {
-  name: "Prateet",
+  name: "Prateet Mishra",
   greeting: "Hi, I'm Prateet Mishra",
-  uni: "MS CS @ University of Southern California | New Grad (Dec '25)",
+  uni: "MS in Computer Science, University of Southern California — new grad, Dec '25.",
   tagline: ["Software Engineer", "Applied AI Engineer"],
-  bio: "Product focused full stack engineer with experience in real time systems and applied AI.",
-  email: "prateetm@usc.edu", 
+  bio: "Product-focused full-stack engineer with experience in real-time systems and applied AI.",
+  email: "prateetm@usc.edu",
   resumeUrl: "https://prateetmishrausc.github.io/Resume-SDE/",
   socials: [
-    { name: "LinkedIn", url: "https://www.linkedin.com/in/prateet-mishra/" },   
-    { name: "GitHub", url: "https://github.com/PrateetMishraUSC" },   
-    { name: "Email", url: "mailto:prateetm@usc.edu" }, 
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/prateet-mishra/" },
+    { name: "GitHub", url: "https://github.com/PrateetMishraUSC" },
+    { name: "Email", url: "mailto:prateetm@usc.edu" },
+  ],
+};
+
+export const heroContent = {
+  kicker: "01 — introduction",
+  headlineStart: "Software engineer crafting ",
+  headlineAccent: "real-time systems",
+  headlineEnd: " & applied AI.",
+  metrics: [
+    { value: "35K+", label: "daily users · ~60% faster page loads" },
+    { value: "2", label: "research papers published (IEEE)" },
+    { value: "50+", label: "student engineers led at USC ITS" },
+  ],
+  status: [
+    { text: "● open to work", ok: true },
+    { text: "role: swe / applied ai" },
+    { text: "grad: dec '25" },
+    { text: "san francisco, ca" },
   ],
 };
 
 export const navLinks = [
-  { label: "About Me", href: "#hero" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Skills", href: "#skills" },
-  { label: "Education", href: "#education" },
-  { label: "Contact", href: "#connect" },
+  { label: "work", href: "#projects" },
+  { label: "experience", href: "#experience" },
+  { label: "about", href: "#about" },
+  { label: "contact", href: "#connect" },
 ];
 
 export const projects = [
     {
     title: "Syntropy",
+    featured: true,
     description:
       "Describe any system in plain English. Syntropy's AI maps it to a live architecture canvas your whole team can explore, edit, and build on together in real time.",
+    metric: { value: "realtime", label: "collaborative AI architecture canvas" },
     tech: ["React", "NextJS", "TypeScript", "Prisma", "LLM", "Transformers"],
-    liveUrl: "https://syntropy-59hj.vercel.app/sign-in?redirect_url=https%3A%2F%2Fsyntropy-59hj.vercel.app%2F", 
-    sourceUrl: "https://github.com/PrateetMishraUSC/Syntropy", 
+    liveUrl: "https://syntropy-59hj.vercel.app/sign-in?redirect_url=https%3A%2F%2Fsyntropy-59hj.vercel.app%2F",
+    sourceUrl: "https://github.com/PrateetMishraUSC/Syntropy",
     gradient: "linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #a855f7 100%)",
     image: syntropyImg,
   },
   {
     title: "DocuChat",
+    featured: true,
     description:
-      "A text-first multimodal RAG system that lets you upload document's and chat with them in real time, extracting tables and figures as searchable knowledge, with full source citations and retrieval transparency.",
+      "A text-first multimodal RAG system that lets you upload documents and chat with them in real time, extracting tables and figures as searchable knowledge, with full source citations and retrieval transparency.",
+    metric: { value: "100%", label: "answers grounded with source citations" },
     tech: ["React", "FastAPI", "LangChain", "Vector DB", "LLM", "Transformers"],
-    liveUrl: "https://huggingface.co/spaces/prateetmishra/DocuChat", 
-    sourceUrl: "https://github.com/PrateetMishraUSC/Text-First-Multimodal-Rag", 
+    liveUrl: "https://huggingface.co/spaces/prateetmishra/DocuChat",
+    sourceUrl: "https://github.com/PrateetMishraUSC/Text-First-Multimodal-Rag",
     gradient: "linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #a855f7 100%)",
     image: docuchatImg,
   },
   {
     title: "WeBudget",
+    featured: true,
+    metric: { value: "2-in-1", label: "smart budgeting & fair bill splitting, unified" },
     description:
       "An AI-driven platform that unifies smart budgeting and seamless bill splitting delivering real-time insights, optimized spending with fair and transparent expense sharing.",
     tech: ["Next.js", "Prisma", "Supabase", "Tailwind CSS", "Shadcn UI" ,"Inngest", "Arcjet"],
@@ -67,8 +88,9 @@ export const projects = [
     title: "SmartMedAI",
     description:
       "Turned a 1.5B Qwen model into a medical Q&A assistant using LoRA + AI feedback (DPO)—no human labels. Trained on 30k prompts; accuracy rose to 0.805 on 200 clinical questions (+4–8% across metrics)",
+    metric: { value: "0.805", label: "accuracy on 200 clinical questions (+4–8%)" },
     tech: ["Python", "PyTorch", "RLAIF", "LoRA", "Hugging Face PEFT", "Qwen", "DeepSeek"],
-    liveUrl: "https://prateetmishrausc.github.io/SmartMedAI/", 
+    liveUrl: "https://prateetmishrausc.github.io/SmartMedAI/",
     sourceUrl: "https://github.com/PrateetMishraUSC/SmartMedAI",
     gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
     image: smartmedAI,
@@ -95,8 +117,10 @@ export const projects = [
   },
     {
     title: "Stock Trading & Analytics Platform",
+    featured: true,
     description:
       "Built a full-stack real-time trading platform with Angular, Node.js, and Redis Streams for sub-second stock updates across 100+ tickers. Enabled live trading with WebSockets, OAuth-secured sessions, and automated data pipelines on GCP Kubernetes (99.99% uptime).",
+    metric: { value: "99.99%", label: "uptime · sub-second updates on 100+ tickers" },
     tech: ["Angular", "Express.js" ,"Node.js", "MongoDB", "Docker", "Redis", "GCP"],
     liveUrl: "https://stock-trading-and-analytics-platfor.vercel.app/search/home",
     sourceUrl: "https://github.com/PrateetMishraUSC/Stock-Trading-and-Analytics-Platform",
@@ -111,7 +135,7 @@ export const education = [
     degree: "Master of Science in Computer Science",
     gpa: "GPA: 3.45/4.00",
     school: "University of Southern California",
-    date: "Aug 2023 — May 2025",
+    date: "Jan 2024 — Dec 2025",
     location: "Los Angeles, CA",
     overview: "Focused on applied AI, distributed systems, and full-stack engineering with hands-on research and industry projects.",
     achievements: [
@@ -130,7 +154,7 @@ export const education = [
   },
   {
     degree: "Bachelor of Technology in Computer Science and Information Technology",
-    gpa: "GPA: 3.70/4.00",
+    gpa: "GPA: 9.23/10.0",
     school: "Symbiosis University of Applied Sciences",
     date: "Aug 2019 — May 2023",
     location: "Indore, India",
@@ -157,120 +181,31 @@ export const experience = [
     company: "USC, Information and Technology Services",
     date: "July 2024 — Dec 2025",
     location: "Los Angeles, CA",
-    description: "Mentored 50 technical student assistants, ran training programs that cut onboarding time 30%, and bridged student teams with full-time engineers to streamline cross-team coordination.",
+    description: "Led 50+ student assistants, cutting onboarding time ~30% and issue resolution ~25% through training programs and runbooks. Established standardized incident response procedures and mentorship frameworks adopted across 3 IT support departments.",
     icon: "academic",
   },
   {
-    role: "Software Developer Intern",
-    company: "NICT Technologies Private Limited",
+    role: "Software Engineer Intern",
+    company: "NICT Technologies",
     date: "July 2023 — Dec 2023",
     location: "Indore, India",
-    description: "Collaborated in a 6-member team to build a responsive React + Tailwind digital asset marketplace, integrating FastAPI/Node.js + PostgreSQL with Redis caching, Dockerized services, and Web3.js/MetaMask—reducing transaction failures ~33%.",
+    description: "Built a React 18 frontend with code splitting and virtualized rendering, cutting page load time ~60% for 35K+ daily active users. Shrank release cycles from 2 weeks to 3 days with GitHub Actions CI/CD, and designed FastAPI/Node.js services with Redis caching handling 500+ API calls/min — reducing transaction failures ~33% and saving $2K+/month.",
     icon: "briefcase",
   },
   {
-    role: "Full Stack Developer Intern",
+    role: "Software Engineer Intern",
     company: "Ypsilon IT Solutions",
     date: "Feb 2023 — Jun 2023",
-    location: "Indore, India",
-    description: "Delivered a Scrap Auction web app in a 4-member team, leading cross-module integration (listing/bidding/checkout), optimizing uploads with batched DB inserts + pre-signed S3 URLs, and building 12 REST APIs + WebSockets for real-time bidding and alerts (200+ notifications/auction).",
-    icon: "briefcase",
-  },
-  {
-    role: "Python Developer Intern",
-    company: "Cad and Cart",
-    date: "Aug 2021 — Oct 2021",
     location: "Remote, India",
-    description: "Built a Django + SQLite web app to digitize client/vendor/order workflows, improving operational efficiency and cutting down record retrieval time by ~50%, while automating Dayco catalog lookups with Selenium (Python/Openpyxl) and adding Excel uploads to speed data entry by ~28%.",
-    icon: "briefcase",
-  },
-  {
-    role: "Frontend Developer Intern",
-    company: "Worth Technologies",
-    date: "Jun 2020 — July 2020",
-    location: "Remote, India",
-    description: "Led development of the Urban Wings e-commerce platform using HTML/CSS/JavaScript with a PHP + MySQL backend, implementing user authentication, secure payments, and admin features for category management and order tracking to streamline operations.",
+    description: "Unified 3 core auction workflows with Django, DRF, and MySQL, cut media upload latency ~55% for 500+ listings via batched inserts and presigned S3 uploads, and shipped a real-time bidding UI for 200+ concurrent users over WebSockets — lifting repeat-bidder retention 19.5% with a notification system dispatching 1K+ alerts per auction.",
     icon: "briefcase",
   },
 ];
 
-export const floatingIcons = [
-  "python/python-original.svg",
-  "react/react-original.svg",
-  "nodejs/nodejs-original.svg",
-  "docker/docker-original.svg",
-  "typescript/typescript-original.svg",
-  "git/git-original.svg",
-  "postgresql/postgresql-original.svg",
-  "javascript/javascript-original.svg",
-  "mongodb/mongodb-original.svg",
-  "pytorch/pytorch-original.svg",
-  "nextjs/nextjs-original.svg",
-  "linux/linux-original.svg",
-];
-
-export const skills = [
-  {
-    category: "Languages",
-    items: [
-      { name: "Python", icon: "python/python-original.svg" },
-      { name: "JavaScript", icon: "javascript/javascript-original.svg" },
-      { name: "TypeScript", icon: "typescript/typescript-original.svg" },
-      { name: "C++", icon: "cplusplus/cplusplus-original.svg" },
-      { name: "SQL", icon: "azuresqldatabase/azuresqldatabase-original.svg" },
-    ],
-  },
-  {
-    category: "Frontend",
-    items: [
-      { name: "React", icon: "react/react-original.svg" },
-      { name: "Angular", icon: "angular/angular-original.svg" },
-      { name: "Next", icon: "nextjs/nextjs-original.svg" },
-      { name: "HTML5", icon: "html5/html5-original.svg" },
-      { name: "CSS3", icon: "css3/css3-original.svg" },
-      { name: "Tailwind", icon: "tailwindcss/tailwindcss-original.svg" },
-    ],
-  },
-  {
-    category: "Backend",
-    items: [
-      { name: "Node.js", icon: "nodejs/nodejs-original.svg" },
-      { name: "Express", icon: "express/express-original.svg" },
-      { name: "Django", icon: "django/django-plain.svg" },
-      { name: "Flask", icon: "flask/flask-original.svg" },
-      { name: "FastAPI", icon: "fastapi/fastapi-plain.svg" },
-    ],
-  },
-  {
-    category: "Database",
-    items: [
-      { name: "MongoDB", icon: "mongodb/mongodb-original.svg" },
-      { name: "PostgreSQL", icon: "postgresql/postgresql-original.svg" },
-      { name: "MySQL", icon: "mysql/mysql-original.svg" },
-      { name: "Supabase", icon: "supabase/supabase-original.svg" },
-      { name: "Pinecone", icon: "custom-icons/pinecone.png", isCustom: true},
-    ],
-  },
-  {
-    category: "DevOps & Cloud",
-    items: [
-      { name: "Git", icon: "git/git-original.svg" },
-      { name: "Docker", icon: "docker/docker-original.svg" },
-      { name: "CI/CD", icon: "githubactions/githubactions-original.svg" },
-      { name: "AWS", icon: "amazonwebservices/amazonwebservices-original-wordmark.svg" },
-      { name: "Firebase", icon: "firebase/firebase-original.svg" },
-      { name: "Kubernetes", icon: "kubernetes/kubernetes-original.svg" },
-    ],
-  },
-  {
-    category: "AI/ML",
-    items: [
-      { name: "PyTorch",  icon: "pytorch/pytorch-original.svg" },
-      { name: "Pandas",   icon: "pandas/pandas-original.svg" },
-      { name: "RAG",      icon: "custom-icons/rag.svg", isCustom: true},
-      { name: "LangChain",icon: "custom-icons/langchain-color.svg", isCustom: true},
-      { name: "LangGraph",icon: "custom-icons/langgraph-color.svg", isCustom: true},
-      { name: "LLMs",     icon: "custom-icons/ollama.svg", isCustom: true},
-      { name: "MCP",      icon: "custom-icons/mcp.svg", isCustom: true},
-  ]},
+export const coreTools = [
+  { group: "languages", items: ["Python", "JavaScript", "TypeScript", "C++", "SQL", "HTML5", "CSS3"] },
+  { group: "frameworks", items: ["React", "Next.js", "Angular", "Node.js", "Express.js", "Django", "Django REST Framework", "FastAPI", "Tailwind CSS", "Prisma"] },
+  { group: "cloud & devops", items: ["AWS (S3, EC2)", "GCP (GKE, Cloud Run)", "Docker", "Kubernetes", "CI/CD", "GitHub Actions", "Linux"] },
+  { group: "databases & tools", items: ["PostgreSQL", "MongoDB", "MySQL", "Redis", "Supabase", "Git", "REST APIs", "GraphQL", "WebSockets", "Jest", "Pytest"] },
+  { group: "ai/ml", items: ["LLMs", "RAG", "LangChain", "FAISS", "Hugging Face", "PyTorch", "Sentence Transformers", "OCR", "Generative AI", "Agentic Workflows"] },
 ];

@@ -13,13 +13,14 @@ html {
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Archivo', system-ui, sans-serif;
   color: var(--text-primary);
   background-color: var(--bg-primary);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  transition: background-color var(--transition-base), color var(--transition-base);
 }
 
 a {
@@ -46,30 +47,13 @@ button {
 
 /* ===== CSS Custom Properties ===== */
 :root {
-  /* Backgrounds */
-  --bg-primary: #faf8f5;
-  --bg-secondary: #f3efe9;
-  --bg-surface: rgba(255, 255, 255, 0.6);
-
-  /* Glass */
-  --glass-bg: rgba(255, 255, 255, 0.55);
-  --glass-border: rgba(160, 130, 200, 0.18);
-  --glass-hover-border: rgba(124, 92, 191, 0.4);
-  --glass-blur: 16px;
-
-  /* Text */
-  --text-primary: #1a1523;
-  --text-secondary: #6b6478;
-  --text-muted: #9e96a8;
-
-  /* Accents */
-  --accent-primary: #7c5cbf;
-  --accent-secondary: #9b7dca;
-  --accent-glow: rgba(124, 92, 191, 0.25);
-  --gradient-accent: linear-gradient(135deg, #9b7dca, #7c5cbf, #c084a0);
+  /* Fonts */
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Archivo', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
 
   /* Spacing */
-  --nav-height: 72px;
+  --nav-height: 64px;
   --container-max: 1200px;
   --container-padding: clamp(1.5rem, 4vw, 4rem);
 
@@ -79,18 +63,94 @@ button {
   --transition-slow: 0.6s ease-out;
 }
 
-/* ===== Typography ===== */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Space Grotesk', sans-serif;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+:root,
+[data-theme='light'] {
+  /* Paper & ink */
+  --bg-primary: #f6f1e7;
+  --bg-secondary: #efe8d8;
+  --bg-surface: #fbf8f1;
+  --ink: #1e1a12;
+  --line: #ddd5c4;
+  --line-strong: #1e1a12;
+
+  /* Text */
+  --text-primary: #1e1a12;
+  --text-secondary: #5c543f;
+  --text-muted: #8a7f66;
+
+  /* Accent */
+  --accent-primary: #a4541f;
+  --accent-contrast: #f6f1e7;
+
+  /* Status bar */
+  --status-bg: #1e1a12;
+  --status-line: #3a3326;
+  --status-text: #b5ac95;
+  --status-ok: #5dcaa5;
+
+  /* Legacy aliases (sections not yet redesigned) */
+  --glass-bg: #fbf8f1;
+  --glass-border: #ddd5c4;
+  --glass-hover-border: #a4541f;
+  --glass-blur: 0px;
+  --accent-secondary: #a4541f;
+  --accent-glow: rgba(164, 84, 31, 0.18);
+  --gradient-accent: linear-gradient(135deg, #a4541f, #8a4218);
 }
 
-h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; }
-h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 600; }
-h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); font-weight: 600; }
+[data-theme='dark'] {
+  /* Warm charcoal */
+  --bg-primary: #171410;
+  --bg-secondary: #1f1b15;
+  --bg-surface: #241f17;
+  --ink: #efe8d8;
+  --line: #2e2920;
+  --line-strong: #efe8d8;
+
+  /* Text */
+  --text-primary: #efe8d8;
+  --text-secondary: #a89d85;
+  --text-muted: #8a7f66;
+
+  /* Accent */
+  --accent-primary: #d9824a;
+  --accent-contrast: #171410;
+
+  /* Status bar */
+  --status-bg: #0f0d0a;
+  --status-line: #2e2920;
+  --status-text: #8a7f66;
+  --status-ok: #5dcaa5;
+
+  /* Legacy aliases */
+  --glass-bg: #241f17;
+  --glass-border: #2e2920;
+  --glass-hover-border: #d9824a;
+  --glass-blur: 0px;
+  --accent-secondary: #d9824a;
+  --accent-glow: rgba(217, 130, 74, 0.18);
+  --gradient-accent: linear-gradient(135deg, #d9824a, #c9763b);
+}
+
+/* ===== Typography ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); }
+h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 
 /* ===== Layout ===== */
+main,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
 .container {
   max-width: var(--container-max);
   margin: 0 auto;
@@ -105,16 +165,13 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); font-weight: 600; }
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.875rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
   font-weight: 500;
   color: var(--accent-primary);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  text-transform: lowercase;
+  letter-spacing: 0.14em;
   margin-bottom: 1rem;
-  padding: 0.375rem 1rem;
-  background: rgba(124, 92, 191, 0.08);
-  border: 1px solid rgba(124, 92, 191, 0.18);
-  border-radius: 9999px;
 }
 
 .section-title {
@@ -128,44 +185,13 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); font-weight: 600; }
 }
 
 .section-header {
-  text-align: center;
+  text-align: left;
   margin-bottom: 3.5rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-
-/* ===== Glass Utility ===== */
-.glass {
-  background: var(--glass-bg);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  border: 1px solid var(--glass-border);
-  border-radius: 1rem;
-}
-
-@supports not (backdrop-filter: blur(12px)) {
-  .glass {
-    background: rgba(255, 255, 255, 0.88);
-  }
-}
-
-/* ===== Ambient Background ===== */
-#root {
-  position: relative;
-  min-height: 100vh;
-}
-
-#root::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background:
-    radial-gradient(600px circle at 15% 25%, rgba(180, 150, 220, 0.15), transparent 70%),
-    radial-gradient(500px circle at 85% 55%, rgba(210, 170, 200, 0.12), transparent 70%),
-    radial-gradient(450px circle at 50% 85%, rgba(160, 130, 200, 0.1), transparent 70%);
-  background-color: var(--bg-primary);
+  align-items: flex-start;
+  border-top: 1px solid var(--line-strong);
+  padding-top: 1.25rem;
 }
 
 /* ===== Animations ===== */
