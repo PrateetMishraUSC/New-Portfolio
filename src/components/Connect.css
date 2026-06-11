@@ -1,80 +1,47 @@
 .connect {
-  text-align: center;
-  padding-bottom: 6rem;
+  padding-bottom: 7rem;
 }
 
-.connect__inner {
+.connect__body {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  max-width: 890px;
-  margin: 0 auto;
+  align-items: flex-start;
+  gap: 2rem;
 }
 
-.connect__title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  margin-bottom: 1.25rem;
-  background: var(--gradient-accent);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.connect__description {
-  color: var(--text-secondary);
-  font-size: 1.05rem;
-  line-height: 1.8;
-  margin-bottom: 2.5rem;
-}
-
-.connect__buttons {
-  display: flex;
-  gap: 1.25rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.connect__btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.85rem 1.75rem;
-  font-weight: 600;
-  font-size: 0.95rem;
-  border-radius: 0.625rem;
-  transition: box-shadow var(--transition-base), transform var(--transition-base), border-color var(--transition-base), background var(--transition-base);
-}
-
-.connect__btn--primary {
-  background: var(--gradient-accent);
-  color: #fff;
-}
-
-.connect__btn--primary:hover {
-  box-shadow: 0 0 24px var(--accent-glow);
-  transform: translateY(-2px);
-}
-
-.connect__btn--secondary {
-  border: 1px solid var(--glass-border);
+.connect__email {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.75rem, 4.5vw, 3.25rem);
   color: var(--text-primary);
-  background: transparent;
+  border-bottom: 1px solid var(--line-strong);
+  padding-bottom: 0.25rem;
+  transition: color var(--transition-base), border-color var(--transition-base);
+  word-break: break-all;
 }
 
-.connect__btn--secondary:hover {
-  border-color: var(--glass-hover-border);
-  background: rgba(124, 92, 191, 0.04);
-  transform: translateY(-2px);
+.connect__email:hover {
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
 }
 
-@media (max-width: 480px) {
-  .connect__buttons {
-    flex-direction: column;
-    width: 100%;
-  }
+.connect__links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
 
-  .connect__btn {
-    justify-content: center;
-    width: 100%;
-  }
+.connect__link {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border: 1px solid var(--line);
+  padding: 0.5rem 1.1rem;
+  transition: border-color var(--transition-base), color var(--transition-base), background var(--transition-base);
+}
+
+.connect__link:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
 }
