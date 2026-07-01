@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { personalInfo, navLinks } from '../data/content';
 import { useScrollSpy } from '../hooks/useScrollSpy';
+import { playThemeChime } from '../utils/themeChime';
 import './Navbar.css';
 
 const sectionIds = navLinks.map((link) => link.href.replace('#', ''));
@@ -79,7 +80,11 @@ export default function Navbar() {
           </a>
           <button
             className="navbar__theme-toggle"
-            onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+            onClick={() => {
+              const next = theme === 'light' ? 'dark' : 'light';
+              playThemeChime(next);
+              setTheme(next);
+            }}
             aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
           >
             {theme === 'light' ? (

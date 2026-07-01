@@ -19,21 +19,12 @@
   stroke: var(--accent-primary);
   stroke-width: 2;
   stroke-linecap: round;
-  opacity: 0.8;
+  opacity: 0.85;
   transition: stroke-dashoffset 0.18s ease-out;
 }
 
-.ink-line__glow {
-  fill: none;
-  stroke: var(--accent-primary);
-  stroke-width: 8;
-  stroke-linecap: round;
-  opacity: 0;
-  transition: stroke-dashoffset 0.18s ease-out, opacity var(--transition-base);
-}
-
-[data-theme='dark'] .ink-line__glow {
-  opacity: 0.22;
+[data-theme='dark'] .ink-line__path {
+  filter: drop-shadow(0 0 4px var(--accent-glow));
 }
 
 .ink-line__pen {
@@ -50,8 +41,15 @@
   opacity: 0.18;
 }
 
-@media (max-width: 768px) {
-  .ink-line {
+[data-theme='dark'] .ink-line__halo {
+  opacity: 0.28;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ink-line__path {
+    transition: none;
+  }
+  .ink-line__pen {
     display: none;
   }
 }

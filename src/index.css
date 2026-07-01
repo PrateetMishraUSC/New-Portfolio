@@ -10,6 +10,11 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
 
 body {
@@ -45,6 +50,7 @@ button {
   color: inherit;
 }
 
+
 /* ===== CSS Custom Properties ===== */
 :root {
   /* Fonts */
@@ -54,7 +60,7 @@ button {
 
   /* Spacing */
   --nav-height: 64px;
-  --container-max: 1200px;
+  --container-max: 1440px;
   --container-padding: clamp(1.5rem, 4vw, 4rem);
 
   /* Transitions */
@@ -65,71 +71,87 @@ button {
 
 :root,
 [data-theme='light'] {
-  /* Paper & ink */
-  --bg-primary: #f6f1e7;
-  --bg-secondary: #efe8d8;
-  --bg-surface: #fbf8f1;
-  --ink: #1e1a12;
-  --line: #ddd5c4;
-  --line-strong: #1e1a12;
+  /* Cherry cola & cream */
+  --bg-primary: #f5efe6;
+  --bg-secondary: #eee4d5;
+  --bg-surface: #faf5ee;
+  --ink: #241a17;
+  --line: #e4d5c4;
+  --line-strong: #241a17;
 
   /* Text */
-  --text-primary: #1e1a12;
-  --text-secondary: #5c543f;
-  --text-muted: #8a7f66;
+  --text-primary: #000000;
+  --text-secondary: #6b5850;
+  --text-muted: #8a786c;
 
   /* Accent */
-  --accent-primary: #a4541f;
-  --accent-contrast: #f6f1e7;
+  --accent-primary: #c1341f;
+  --accent-contrast: #fbe9e2;
 
   /* Status bar */
-  --status-bg: #1e1a12;
-  --status-line: #3a3326;
-  --status-text: #b5ac95;
-  --status-ok: #5dcaa5;
+  --status-bg: #faf5ee;
+  --status-line: #e4d5c4;
+  --status-text: #6b5850;
+  --status-chip-bg: #eee2d3;
+  --status-ok: #1f6e40;
+  --status-ok-bg: #e3f3e9;
+  --status-ok-border: #bfe3cc;
+  --status-ok-dot: #2e9e5b;
 
   /* Legacy aliases (sections not yet redesigned) */
-  --glass-bg: #fbf8f1;
-  --glass-border: #ddd5c4;
-  --glass-hover-border: #a4541f;
+  --glass-bg: #faf5ee;
+  --glass-border: #e4d5c4;
+  --glass-hover-border: #c1341f;
   --glass-blur: 0px;
-  --accent-secondary: #a4541f;
-  --accent-glow: rgba(164, 84, 31, 0.18);
-  --gradient-accent: linear-gradient(135deg, #a4541f, #8a4218);
+  --accent-secondary: #e8a33d;
+  --accent-secondary-bg: #fbeacb;
+  --accent-secondary-border: #edd39a;
+  --accent-secondary-text: #8a5d10;
+  --accent-secondary-glow: rgba(232, 163, 61, 0.22);
+  --accent-glow: rgba(193, 52, 31, 0.18);
+  --gradient-accent: linear-gradient(135deg, #c1341f, #a02a19);
 }
 
 [data-theme='dark'] {
-  /* Warm charcoal */
-  --bg-primary: #171410;
-  --bg-secondary: #1f1b15;
-  --bg-surface: #241f17;
-  --ink: #efe8d8;
-  --line: #2e2920;
-  --line-strong: #efe8d8;
+  /* Cherry cola — warm near-black */
+  --bg-primary: #0a0806;
+  --bg-secondary: #15100c;
+  --bg-surface: #1c1712;
+  --ink: #f1e4d8;
+  --line: #2a221c;
+  --line-strong: #f1e4d8;
 
   /* Text */
-  --text-primary: #efe8d8;
-  --text-secondary: #a89d85;
-  --text-muted: #8a7f66;
+  --text-primary: #f1e4d8;
+  --text-secondary: #b3a192;
+  --text-muted: #8a786c;
 
   /* Accent */
-  --accent-primary: #d9824a;
-  --accent-contrast: #171410;
+  --accent-primary: #e8623f;
+  --accent-contrast: #241109;
 
   /* Status bar */
-  --status-bg: #0f0d0a;
-  --status-line: #2e2920;
-  --status-text: #8a7f66;
-  --status-ok: #5dcaa5;
+  --status-bg: #15100c;
+  --status-line: #2a221c;
+  --status-text: #b3a192;
+  --status-chip-bg: #1f1812;
+  --status-ok: #5cc98c;
+  --status-ok-bg: #12271c;
+  --status-ok-border: #234a34;
+  --status-ok-dot: #2e9e5b;
 
   /* Legacy aliases */
-  --glass-bg: #241f17;
-  --glass-border: #2e2920;
-  --glass-hover-border: #d9824a;
+  --glass-bg: #1c1712;
+  --glass-border: #2a221c;
+  --glass-hover-border: #e8623f;
   --glass-blur: 0px;
-  --accent-secondary: #d9824a;
-  --accent-glow: rgba(217, 130, 74, 0.18);
-  --gradient-accent: linear-gradient(135deg, #d9824a, #c9763b);
+  --accent-secondary: #e8a33d;
+  --accent-secondary-bg: #2a2013;
+  --accent-secondary-border: #4a3a1a;
+  --accent-secondary-text: #e0b95e;
+  --accent-secondary-glow: rgba(232, 163, 61, 0.3);
+  --accent-glow: rgba(232, 98, 63, 0.35);
+  --gradient-accent: linear-gradient(135deg, #e8623f, #c1341f);
 }
 
 /* ===== Typography ===== */
@@ -193,6 +215,7 @@ footer {
   border-top: 1px solid var(--line-strong);
   padding-top: 1.25rem;
 }
+.panel__inner, .panel__more-inner { max-width: 1440px; }
 
 /* ===== Animations ===== */
 @keyframes fadeInUp {

@@ -16,9 +16,9 @@ export const personalInfo = {
   email: "prateetm@usc.edu",
   resumeUrl: "https://prateetmishrausc.github.io/Resume-SDE/",
   socials: [
-    { name: "LinkedIn", url: "https://www.linkedin.com/in/prateet-mishra/" },
-    { name: "GitHub", url: "https://github.com/PrateetMishraUSC" },
-    { name: "Email", url: "mailto:prateetm@usc.edu" },
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/prateet-mishra/", icon: "linkedin" },
+    { name: "GitHub", url: "https://github.com/PrateetMishraUSC", icon: "github" },
+    { name: "Email", url: "mailto:prateetm@usc.edu", icon: "mail" },
   ],
 };
 
@@ -33,10 +33,8 @@ export const heroContent = {
     { value: "50+", label: "student engineers led at USC ITS" },
   ],
   status: [
-    { text: "● open to work", ok: true },
-    { text: "role: swe / applied ai" },
-    { text: "grad: dec '25" },
-    { text: "san francisco, ca" },
+    { text: "open to work", ok: true },
+    { text: "san francisco, ca", icon: "pin" },
   ],
 };
 
@@ -108,7 +106,7 @@ export const projects = [
   {
     title: "Real EState Price Prediction",
     description:
-      "Built an end-to-end pricing pipeline in Python (pandas, scikit-learn) using feature engineering (BHK, sqft, locality), outlier handling, and k-fold validation, achieving R² = 0.87 on 10k+ Bengaluru listings. Deployed a Flask inference service with an interactive UI for real-time estimates, cutting manual evaluation time by ~60%.",
+      "Built an end-to-end pricing pipeline in Python (pandas, scikit-learn) using feature engineering (BHK, sqft, locality), outlier handling, and k-fold validation, achieving R² = 0.87 on 10k+ Bengaluru listings.",
     tech: ["Python", "Pandas", "Scikit-learn", "Flask API", "Feature Engineering"],
     liveUrl: "https://real-estate-price-prediction-8mp8acuyj3yjpwawvecktq.streamlit.app/", 
     sourceUrl: "https://github.com/PrateetMishraUSC/Real-State-Price-Prediction",

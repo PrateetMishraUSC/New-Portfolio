@@ -1,62 +1,135 @@
-.worklog {
-  display: flex;
-  flex-direction: column;
+/* ===== Experience — expanding editorial ledger ===== */
+#experience .section-title em {
+  font-style: italic;
+  color: var(--accent-primary);
 }
 
-.worklog__entry {
+.ledger {
+  border-top: 1px solid var(--line-strong);
+}
+
+.row {
+  position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 0.55fr) minmax(0, 1.45fr);
-  gap: 2rem;
-  padding: 2rem 0;
+  grid-template-columns: clamp(3.5rem, 7vw, 6rem) 1fr auto;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: start;
+  padding: 2.2rem 0;
   border-bottom: 1px solid var(--line);
+  cursor: pointer;
+  transition: padding var(--transition-base);
 }
 
-.worklog__entry:first-of-type {
-  border-top: 1px solid var(--line);
+/* background wash that wipes in when a row is open */
+.row::before {
+  content: '';
+  position: absolute;
+  left: -1rem;
+  right: -1rem;
+  top: 0;
+  bottom: 0;
+  background: var(--bg-secondary);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  z-index: 0;
 }
 
-.worklog__date {
+.row--open::before {
+  opacity: 1;
+}
+
+.row > * {
+  position: relative;
+  z-index: 1;
+}
+
+.row__idx {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--text-primary);
+  font-size: clamp(1.4rem, 3vw, 2.4rem);
+  color: var(--line);
+  line-height: 1;
+  padding-top: 0.35rem;
+  transition: color var(--transition-base), transform var(--transition-base);
 }
 
-.worklog__location {
+.row--open .row__idx {
+  color: var(--accent-secondary);
+  transform: translateX(6px);
+}
+
+.row__main {
+  min-width: 0;
+}
+
+.row__role {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.row__company {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--accent-primary);
+  margin-top: 0.5rem;
+}
+
+.row__body {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height var(--transition-base), opacity var(--transition-base),
+    margin var(--transition-base);
+}
+
+.row--open .row__body {
+  max-height: 360px;
+  opacity: 1;
+  margin-top: 1.2rem;
+}
+
+.row__desc {
+  font-size: 0.96rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  max-width: 680px;
+}
+
+.row__when {
+  text-align: right;
   font-family: var(--font-mono);
   font-size: 0.72rem;
   color: var(--text-muted);
-  margin-top: 0.25rem;
-}
-
-.worklog__role {
-  font-family: var(--font-serif);
-  font-size: 1.3rem;
-  margin-bottom: 0.15rem;
-}
-
-.worklog__company {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--accent-primary);
-  margin-bottom: 0.75rem;
-}
-
-.worklog__description {
-  font-size: 0.92rem;
   line-height: 1.7;
-  color: var(--text-secondary);
-  max-width: 620px;
+  white-space: nowrap;
 }
 
-@media (max-width: 768px) {
-  .worklog__entry {
+.row__when b {
+  color: var(--text-primary);
+  font-weight: 500;
+  display: block;
+}
+
+@media (max-width: 720px) {
+  .row {
     grid-template-columns: 1fr;
-    gap: 0.75rem;
-    padding: 1.5rem 0;
+    gap: 0.6rem;
   }
 
-  .worklog__location {
-    display: inline;
-    margin-left: 0.75rem;
+  .row__when {
+    text-align: left;
+  }
+
+  .row__idx {
+    font-size: 1.2rem;
+  }
+
+  /* always expanded on mobile — less scroll trickery */
+  .row__body {
+    max-height: none;
+    opacity: 1;
+    margin-top: 0.9rem;
   }
 }

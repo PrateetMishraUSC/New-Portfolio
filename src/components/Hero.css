@@ -21,6 +21,7 @@
 .hero__actions  { animation: fadeInUp 0.6s ease-out 0.55s both; }
 .hero__visual   { animation: fadeInUp 0.6s ease-out 0.4s both; }
 .hero__metrics  { animation: fadeInUp 0.6s ease-out 0.7s both; }
+.hero__status   { animation: fadeInUp 0.6s ease-out 0.85s both; }
 
 .hero__kicker {
   font-family: var(--font-mono);
@@ -33,23 +34,27 @@
 .hero__headline {
   font-family: var(--font-serif);
   font-weight: 400;
-  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
-  line-height: 1.12;
+  font-size: clamp(2.4rem, 4.5vw, 4.3rem);
+  line-height: 1.32;
   color: var(--text-primary);
   margin-bottom: 1.25rem;
   max-width: 14em;
 }
 
 .hero__headline em {
-  font-style: italic;
-  color: var(--accent-primary);
+  display: inline-block;
+  font-style: normal;
+  line-height: 1.2;
+  background: var(--accent-primary);
+  color: var(--accent-contrast);
+  padding: 0.05em 0.2em;
+  border-radius: 4px;
 }
 
 .hero__bio {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   line-height: 1.7;
   color: var(--text-secondary);
-  max-width: 520px;
   margin-bottom: 2rem;
 }
 
@@ -62,7 +67,7 @@
 
 .hero__resume-btn {
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 500;
   background: var(--ink);
   color: var(--bg-primary);
@@ -79,7 +84,7 @@
 .hero__work-link {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   color: var(--text-primary);
   border-bottom: 1px solid var(--line-strong);
   padding-bottom: 2px;
@@ -95,7 +100,7 @@
 .hero__visual {
   position: relative;
   padding: 0 14px 14px 0;
-  max-width: 360px;
+  max-width: 420px;
   justify-self: end;
   width: 100%;
 }
@@ -107,7 +112,7 @@
   bottom: 0;
   width: 85%;
   height: 85%;
-  background: var(--accent-primary);
+  background: var(--accent-secondary);
   z-index: 0;
   transition: background var(--transition-base);
 }
@@ -147,57 +152,100 @@
 
 .hero__metric-value {
   font-family: var(--font-serif);
-  font-size: 1.7rem;
+  font-size: clamp(1.5rem, 7vw, 2rem);
   line-height: 1.2;
   color: var(--text-primary);
 }
 
 .hero__metric-label {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
   margin-top: 2px;
 }
 
-/* Terminal status bar */
+/* Status bar */
 .hero__status {
   background: var(--status-bg);
   border-top: 1px solid var(--status-line);
+  transition: background var(--transition-base), border-color var(--transition-base);
 }
 
 .hero__status-inner {
   display: flex;
+  align-items: center;
   justify-content: center;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.hero__status-inner::-webkit-scrollbar {
-  display: none;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .hero__status-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   font-family: var(--font-mono);
   font-size: 0.72rem;
   color: var(--status-text);
-  padding: 0.6rem 1rem;
-  border-right: 1px solid var(--status-line);
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
   white-space: nowrap;
 }
 
-.hero__status-item:first-child {
-  border-left: 1px solid var(--status-line);
+.hero__status-icon {
+  color: var(--accent-primary);
+  flex-shrink: 0;
 }
 
 .hero__status-item--ok {
+  font-weight: 500;
   color: var(--status-ok);
+  background: var(--status-ok-bg);
+  border: 1px solid var(--status-ok-border);
+}
+
+.hero__status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--status-ok-dot);
+  flex-shrink: 0;
+  animation: statusPulse 2s ease-out infinite;
+}
+
+@keyframes statusPulse {
+  0% { box-shadow: 0 0 0 0 var(--status-ok-border); }
+  70% { box-shadow: 0 0 0 6px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+.hero__status-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .hero__status-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--status-text);
+  background: var(--status-chip-bg);
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius, 8px);
   transition: color var(--transition-base);
 }
 
 .hero__status-link:hover {
-  color: var(--status-ok);
+  color: var(--accent-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__status-dot {
+    animation: none;
+  }
 }
 
 /* Responsive */
@@ -235,5 +283,19 @@
 
   .hero__status-inner {
     justify-content: flex-start;
+  }
+
+  .hero__status-item--ok {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero__status-links {
+    width: 100%;
+  }
+
+  .hero__status-link {
+    flex: 1;
+    justify-content: center;
   }
 }
